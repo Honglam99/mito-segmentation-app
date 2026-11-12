@@ -1,5 +1,8 @@
 [server]
 maxUploadSize = 50
+# Hot reload is not needed on the deployed app; the watcher also logs harmless
+# "Examining the path of torch.classes" errors when it scans PyTorch
+fileWatcherType = "none"
 
 [browser]
 gatherUsageStats = false
