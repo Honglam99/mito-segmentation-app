@@ -12,7 +12,7 @@ import segment as S
 st.set_page_config(page_title='Mitochondria segmentation (RI)', layout='wide')
 
 MODES = {  # value: fast flag passed to S.segment
-    'Accurate: 3-fold ensemble + mirroring (as in the paper)': False,
+    'Accurate: 3-fold ensemble + mirroring (recommended)': False,
     'Fast: single model, no mirroring': True,
 }
 EXAMPLES = Path(__file__).parent / 'examples'
@@ -38,7 +38,7 @@ def read_image(data: bytes, name: str):
         lo, hi = np.percentile(arr, (0.5, 99.5))
         arr = np.clip((arr - lo) / max(hi - lo, 1e-6), 0, 1) * 255
         notes.append(f'{name}: {img.mode} image rescaled to 8 bit (0.5-99.5 percentile). The model was '
-                     'trained on 8-bit exports; results may differ from the paper.')
+                     'trained on 8-bit exports; accuracy may be lower.')
         gray = arr.astype(np.uint8)
     else:
         if img.mode not in ('L', 'P', '1'):
@@ -145,4 +145,4 @@ if inputs:
 
 st.divider()
 st.caption('Model: nnU-Net v2 (2D PlainConvUNet, 3 leave-one-dish-out folds). '
-           'Citation and code: see the README.')
+           'Manuscript in preparation.')

@@ -4,10 +4,10 @@ Streamlit app: upload refractive-index (RI) images from holotomography and get b
 masks from a 2D nnU-Net trained on fluorescence-guided labels of HUVECs.
 
 - **Accurate mode** (default): ensemble of the 3 leave-one-dish-out fold models with mirror test-time
-  augmentation, identical to the paper. About 5-10 s per 512x512 image on CPU.
+  augmentation, as used in the accompanying study. About 5-10 s per 512x512 image on CPU.
 - **Fast mode**: one fold model without mirroring, under 1 s per image.
 
-Live app: [APP_LINK]. Model weights: [MODEL_REPO_LINK]. Code and data: [CODE_LINK].
+The model weights are hosted on Hugging Face and downloaded automatically when the app starts.
 
 **Scope.** Trained on HUVEC RI images from one holotomographic microscope (held-out test Dice
 0.850 ± 0.064). On other microscopes or cell types accuracy is lower; check results visually. Not for
@@ -26,5 +26,4 @@ variable (or a local folder path). For a private repo also set `HF_TOKEN`.
 
 ## Citation
 
-> **Label-Free Segmentation of Endothelial Mitochondria in Live-Cell Holotomography via
-> Fluorescence-Guided Annotation and nnU-Net.** [Authors]. *Cell Reports Methods* (2026). [DOI]
+Manuscript in preparation. Citation details will be added here once the paper is published.
