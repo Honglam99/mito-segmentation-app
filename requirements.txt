@@ -1,6 +1,6 @@
-# Streamlit Community Cloud: choose Python 3.10 under "Advanced settings" when deploying.
+# Streamlit Community Cloud: choose Python 3.11 under "Advanced settings" when deploying.
 # CPU-only PyTorch (the default PyPI build pulls ~2 GB of unused CUDA libraries)
-torch @ https://download.pytorch.org/whl/cpu/torch-2.5.1%2Bcpu-cp310-cp310-linux_x86_64.whl
+torch @ https://download.pytorch.org/whl/cpu/torch-2.5.1%2Bcpu-cp311-cp311-linux_x86_64.whl
 nnunetv2==2.7.0
 dynamic-network-architectures==0.4.3
 batchgenerators==0.25.1
